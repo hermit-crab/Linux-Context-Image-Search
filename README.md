@@ -11,7 +11,7 @@ Dependencies will be installed automatically.
 
 #### Installation
 ```bash
-> pip3 install https://github.com/Unknowny/Linux-Context-Image-Search/archive/master.zip
+> pip3 install --user https://github.com/Unknowny/Linux-Context-Image-Search/archive/master.zip
 # next line will install the icons / desktop entries into appropriate home directories
 > python3 -m searchbyimage --install
 # you should also be able to call it simply with
