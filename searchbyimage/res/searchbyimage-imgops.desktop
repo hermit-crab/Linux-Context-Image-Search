@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Reverse Image Search ImgOps
+Exec=searchbyimage --provider imgops %f
+Icon=searchbyimage-imgops
+NoDisplay=true
+Terminal=false
+Type=Application
+MimeType=image/bmp;image/gif;image/jpeg;image/jpg;image/png;
