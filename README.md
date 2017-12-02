@@ -17,3 +17,6 @@ Dependencies will be installed automatically.
 # you should also be able to call it simply with
 > searchbyimage --help
 ```
+
+#### Note
+You might want to avoid using google search option as it may cause google to start showing you captchas.
