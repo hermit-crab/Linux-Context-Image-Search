@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Reverse Image Search ImgOps
-Exec=searchbyimage --provider imgops %f
+Exec=python3 -m searchbyimage --provider imgops %f
 Icon=searchbyimage-imgops
 NoDisplay=true
 Terminal=false
