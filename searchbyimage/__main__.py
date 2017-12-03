@@ -6,9 +6,11 @@ import argparse
 import glob
 
 from . import search_providers
-from . import gui_qt as gui
-# from . import gui_tk as gui
-# from . import gui_gtk as gui
+
+try:
+    from . import gui_qt as gui
+except ImportError:
+    from . import gui_tk as gui
 
 
 def install_desktop_entry():
