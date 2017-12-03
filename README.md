@@ -6,8 +6,10 @@ Check out the [fancy loader](https://my.mixtape.moe/ldhhbk.webm)!
 
 #### Requirements
 * Python3
+* PyQt4 for the circular loader bar (without it a simpler loader will be shown)  
+  (package `python-qt4` on ubuntu, `python-pyqt4` on archlinux)
 
-Dependencies will be installed automatically.
+Other dependencies will be installed automatically.
 
 #### Installation
 ```bash
