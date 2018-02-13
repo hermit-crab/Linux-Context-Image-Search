@@ -2,7 +2,7 @@
 Context menu reverse image search option for linux desktops.
 ![test](https://i.imgur.com/0eGceKd.png)
 
-Check out the [fancy loader](https://my.mixtape.moe/ldhhbk.webm)!
+Check out the [fancy loader](https://gfycat.com/EdibleEnergeticDeermouse)!
 
 #### Requirements
 * Python3
