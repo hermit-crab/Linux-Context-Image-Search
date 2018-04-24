@@ -21,6 +21,7 @@ def install_desktop_entry():
         subprocess.run(['xdg-icon-resource', 'install', '--novendor', '--size', '48', icon_file])
 
     app_dir = os.path.expanduser('~/.local/share/applications')
+    os.makedirs(app_dir, exist_ok=True)
     for desktop_file in glob.glob(os.path.join(here, 'res', 'searchbyimage-*.desktop')):
         print('installing:', desktop_file)
         dst = os.path.join(app_dir, os.path.basename(desktop_file))
