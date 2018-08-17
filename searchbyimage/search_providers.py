@@ -1,6 +1,7 @@
 # TODO: logging
 import os
 from io import BytesIO
+from urllib.parse import urljoin
 
 import pycurl
 
@@ -69,7 +70,8 @@ class ImgOps(SearchProviderCurl):
         c.perform()
         c.close()
         self._upload_done()
-        return c.headers['location']
+        redirect = urljoin('https://imgops.com', c.headers['location'])
+        return redirect
 
 
 class Google(SearchProviderCurl):
