@@ -109,7 +109,7 @@ class GUI(QtCore.QObject):
         label.raise_()
 
         def update(frac):
-            self.progress = frac
+            self.progress = frac if frac < 1 else 1
             self.window.update()
 
         def animate_progress(new_frac):
