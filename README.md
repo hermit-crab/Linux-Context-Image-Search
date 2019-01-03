@@ -6,8 +6,8 @@ Check out the [fancy loader](https://gfycat.com/EdibleEnergeticDeermouse)!
 
 #### Requirements
 * Python3
-* PyQt4 for the circular loader bar (without it a simpler loader will be shown)  
-  (package `python-qt4` on ubuntu, `python-pyqt4` on archlinux)
+* PyQt5 or PyQt4 for the circular loader bar (without it a simpler loader will be shown)  
+  (package `python3-pyqt5` or `python3-pyqt4` on ubuntu, `python-pyqt5` on archlinux)
 
 Other dependencies will be installed automatically.
 
