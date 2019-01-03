@@ -10,8 +10,13 @@ import glob
 
 import psutil
 
-from PyQt4 import QtGui, QtCore
-from PyQt4.QtCore import Qt
+try:
+    from PyQt5 import QtGui, QtCore, QtWidgets
+    from PyQt5.QtCore import Qt
+except ImportError:
+    from PyQt4 import QtGui, QtCore
+    from PyQt4.QtCore import Qt
+    QtWidgets = QtGui
 
 
 from . import event_binder
@@ -65,12 +70,12 @@ class GUI(QtCore.QObject):
 
         self.animate_timer = QtCore.QTimer()
 
-        self.app = QtGui.QApplication(sys.argv)
+        self.app = QtWidgets.QApplication(sys.argv)
         signal.signal(signal.SIGINT, signal.SIG_DFL)
 
         self.x_offset, self.y_offset = self.decide_window_offset()
 
-        self.window = QtGui.QWidget()
+        self.window = QtWidgets.QWidget()
         self.window.setGeometry(0, 0, self.window_size, self.window_size)
         self.to_mouse()
         self.window.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool | Qt.WindowStaysOnTopHint)
@@ -83,10 +88,10 @@ class GUI(QtCore.QObject):
         if len(text) > self.label_max_letters:
             part = int(self.label_max_letters/2) - 1
             text = text[:part] + ' .. ' + text[-part:]
-        label = QtGui.QLabel(text, self.window)
+        label = QtWidgets.QLabel(text, self.window)
         label.setStyleSheet(self.label_style)
         label.setAlignment(QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter)
-        label.setSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
+        label.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
 
         delta = label.sizeHint().width() - self.window_size
         if delta > 0:
@@ -95,15 +100,15 @@ class GUI(QtCore.QObject):
         else:
             delta = 0
 
-        layout = QtGui.QHBoxLayout()
-        layout.setMargin(0)
+        layout = QtWidgets.QHBoxLayout()
+        layout.setContentsMargins(0, 0, 0, 0)
         self.window.setLayout(layout)
         layout.addWidget(label)
 
         # Animation
 
         self.pen = QtGui.QPen()
-        self.canvas = QtGui.QWidget(self.window)
+        self.canvas = QtWidgets.QWidget(self.window)
         self.canvas.setGeometry(delta/2, 0, self.window_size, self.window_size)
         self.canvas.paintEvent = self.paintEvent
         label.raise_()
@@ -199,7 +204,7 @@ class GUI(QtCore.QObject):
         self.abort(quit=False)
         event_binder.stop()
 
-        qtext = QtGui.QPlainTextEdit(text)
+        qtext = QtWidgets.QPlainTextEdit(text)
         qtext.setReadOnly(True)
         qtext.setWindowTitle('Error uploading ' + self.filename)
         qtext.setGeometry(0, 0, 455, 200)
