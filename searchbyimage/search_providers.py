@@ -63,10 +63,10 @@ class ImgOps(SearchProviderCurl):
         data = [
             ('photo', (pycurl.FORM_FILE, filename.encode('utf-8')))
         ]
-        c.setopt(c.URL, 'http://imgops.com/upload/uploadPhoto-action.asp')
+        c.setopt(c.URL, 'http://imgops.com/store')
         c.setopt(c.POST, True)
         c.setopt(c.HTTPPOST, data)
-        c.setopt(c.USERAGENT, "Mozilla/5.0 (compatible; pycurl)")
+        c.setopt(c.USERAGENT, 'Mozilla/5.0 (compatible; pycurl)')
         c.perform()
         c.close()
         self._upload_done()
