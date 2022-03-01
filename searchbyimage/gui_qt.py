@@ -1,20 +1,21 @@
-import sys
+import glob
 import os
+import signal
+import sys
+import tempfile
+import time
+import traceback
 import webbrowser
 from threading import Thread
-import time
-import signal
-import traceback
-import tempfile
-import glob
 
 import psutil
 
+
 try:
-    from PyQt5 import QtGui, QtCore, QtWidgets
+    from PyQt5 import QtCore, QtGui, QtWidgets
     from PyQt5.QtCore import Qt
 except ImportError:
-    from PyQt4 import QtGui, QtCore
+    from PyQt4 import QtCore, QtGui
     from PyQt4.QtCore import Qt
     QtWidgets = QtGui
 
