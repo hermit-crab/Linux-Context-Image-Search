@@ -110,7 +110,7 @@ class GUI(QtCore.QObject):
 
         self.pen = QtGui.QPen()
         self.canvas = QtWidgets.QWidget(self.window)
-        self.canvas.setGeometry(delta/2, 0, self.window_size, self.window_size)
+        self.canvas.setGeometry(int(delta/2), 0, self.window_size, self.window_size)
         self.canvas.paintEvent = self.paintEvent
         label.raise_()
 
