@@ -96,7 +96,7 @@ class GUI(QtCore.QObject):
 
         delta = label.sizeHint().width() - self.window_size
         if delta > 0:
-            self.x_offset -= delta/2
+            self.x_offset -= int(delta/2)
             self.to_mouse()
         else:
             delta = 0
